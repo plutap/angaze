@@ -19,9 +19,9 @@ class LoadJourney implements FixtureInterface
 
         $yml = Yaml::parse(file_get_contents($filename));
         foreach ($yml as $item) {
-            $subjectType = new SubjectType();
-            $subjectType->setName($item['name']);
-            $manager->persist($subjectType);
+            $journey = new Journey();
+            $journey->setName($item['name']);
+            $manager->persist($journey);
         }
         $manager->flush();
 
