@@ -15,7 +15,7 @@
             </tr>
             <tr>
                 <th>Faculty</th>
-                <td>{{ entity.faculty }}</td>
+                <td><a href="{{ path('faculty_show', { 'id': entity.faculty.id }) }}">{{ entity.faculty }}</a></td>
             </tr>
         </tbody>
     </table>
