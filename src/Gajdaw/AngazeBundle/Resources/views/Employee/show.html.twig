@@ -17,6 +17,10 @@
                 <th>Surname</th>
                 <td>{{ entity.surname }}</td>
             </tr>
+            <tr>
+                <th>Position</th>
+                <td><a href="{{ path('position_show', { 'id': entity.position.id }) }}">{{ entity.position }}</a></td>
+            </tr>
         </tbody>
     </table>
 
