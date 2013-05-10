@@ -4,7 +4,7 @@ namespace Gajdaw\AngazeBundle\DataFixtures\ORM;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
-use Gajdaw\AngazeBundle\Entity\SubjectType;
+use Gajdaw\AngazeBundle\Entity\Journey;
 use Symfony\Component\Yaml\Yaml;
 
 class LoadJourney implements FixtureInterface
