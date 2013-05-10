@@ -12,7 +12,9 @@ class EmployeeType extends AbstractType
     {
         $builder
             ->add('name')
+            ->add('slug')
             ->add('surname')
+            ->add('position')
         ;
     }
 
