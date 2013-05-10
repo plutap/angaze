@@ -3,14 +3,14 @@
 namespace Gajdaw\AngazeBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Gedmo\Mapping\Annotation as Gedmo;
+
 /**
- * Organizations
+ * Conference
  *
  * @ORM\Table()
  * @ORM\Entity
  */
-class Organization
+class Conference
 {
     /**
      * @var integer
@@ -28,16 +28,11 @@ class Organization
      */
     private $name;
 
-    /**
-     * @Gedmo\Slug(fields={"name"})
-     * @ORM\Column(length=128, unique=false, nullable=true)
-     */
-    private $slug;
 
     /**
      * Get id
      *
-     * @return integer
+     * @return integer 
      */
     public function getId()
     {
@@ -47,44 +42,23 @@ class Organization
     /**
      * Set name
      *
-     * @param  string       $name
-     * @return Organization
+     * @param string $name
+     * @return Conference
      */
     public function setName($name)
     {
         $this->name = $name;
-
+    
         return $this;
     }
 
     /**
      * Get name
      *
-     * @return string
+     * @return string 
      */
     public function getName()
     {
         return $this->name;
     }
-
-    /**
-     * Set slug
-     *
-     * @param string $slug
-     */
-    public function setSlug($slug)
-    {
-        $this->slug = $slug;
-    }
-
-    /**
-     * Get slug
-     *
-     * @return string
-     */
-    public function getSlug()
-    {
-        return $this->slug;
-    }
-
 }

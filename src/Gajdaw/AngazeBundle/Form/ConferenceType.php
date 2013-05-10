@@ -6,25 +6,24 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class FacultyType extends AbstractType
+class ConferenceType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
             ->add('name')
-            ->add('slug')
         ;
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Gajdaw\AngazeBundle\Entity\Faculty'
+            'data_class' => 'Gajdaw\AngazeBundle\Entity\Conference'
         ));
     }
 
     public function getName()
     {
-        return 'gajdaw_angazebundle_facultytype';
+        return 'gajdaw_angazebundle_conferencetype';
     }
 }
