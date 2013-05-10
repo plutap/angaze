@@ -47,6 +47,14 @@ class Employee
      */
     private $surname;
 
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="foo", type="string", length=255)
+     */
+    private $foo;
+
     /**
      * Get id
      *
@@ -133,17 +141,40 @@ class Employee
     public function setPosition(\Gajdaw\AngazeBundle\Entity\Position $position = null)
     {
         $this->position = $position;
-    
+
         return $this;
     }
 
     /**
      * Get position
      *
-     * @return \Gajdaw\AngazeBundle\Entity\Position 
+     * @return \Gajdaw\AngazeBundle\Entity\Position
      */
     public function getPosition()
     {
         return $this->position;
+    }
+
+    /**
+     * Set foo
+     *
+     * @param string $foo
+     * @return Employee
+     */
+    public function setFoo($foo)
+    {
+        $this->foo = $foo;
+    
+        return $this;
+    }
+
+    /**
+     * Get foo
+     *
+     * @return string 
+     */
+    public function getFoo()
+    {
+        return $this->foo;
     }
 }
