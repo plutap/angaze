@@ -17,9 +17,9 @@ class DepartmentControllerTest extends WebTestCase
         $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /department/");
 
         // Check data in the show view
-        $this->assertEquals(1, $crawler->filter('td:contains("Szydełkowania")')->count(), 'Missing element td:contains("Szydełkowania")');
-        $this->assertEquals(1, $crawler->filter('td:contains("Prędkości pojazdów")')->count(), 'Missing element td:contains("Prędkości pojazdów")');
-        $this->assertEquals(1, $crawler->filter('td:contains("Ubijania masła")')->count(), 'Missing element td:contains("Ubijania masła")');
+        $this->assertEquals(1, $crawler->filter('td:contains("Informatyka")')->count(), 'Missing element td:contains("Informatyka")');
+        $this->assertEquals(1, $crawler->filter('td:contains("Matematyka")')->count(), 'Missing element td:contains("Matematyka")');
+        $this->assertEquals(1, $crawler->filter('td:contains("Instytut Historii")')->count(), 'Missing element td:contains("Instytut Historii")');
     }
 
     /*
