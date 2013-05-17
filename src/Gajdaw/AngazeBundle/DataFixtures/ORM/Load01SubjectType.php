@@ -7,7 +7,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 use Gajdaw\AngazeBundle\Entity\SubjectType;
 use Symfony\Component\Yaml\Yaml;
 
-class LoadSubjectType implements FixtureInterface
+class Load01SubjectType implements FixtureInterface
 {
     function load(ObjectManager $manager)
     {
