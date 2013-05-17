@@ -11,9 +11,9 @@ class FacultyControllerTest extends WebTestCase
         $client = static::createClient();
         $crawler = $client->request('GET', '/faculty/');
         $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /faculty/");
-        $this->assertEquals(0, $crawler->filter('td:contains("Nauk Humanistycznych")')->count(), 'Missing element td:contains("Nauk Humanistycznych")');
-        $this->assertEquals(0, $crawler->filter('td:contains("Matematyczno-Przyrodniczy")')->count(), 'Missing element td:contains("Matematyczno-Przyrodniczy")');
-        $this->assertEquals(0, $crawler->filter('td:contains("Dziennikarstwa")')->count(), 'Missing element td:contains("Dziennikarstwa")');
+        $this->assertEquals(1, $crawler->filter('td:contains("NaukHumanistycznych")')->count(), 'Missing element td:contains("NaukHumanistycznych")');
+        $this->assertEquals(1, $crawler->filter('td:contains("Matematyczno-Przyrodniczy")')->count(), 'Missing element td:contains("Matematyczno-Przyrodniczy")');
+        $this->assertEquals(1, $crawler->filter('td:contains("Dziennikarstwa")')->count(), 'Missing element td:contains("Dziennikarstwa")');
     }
     /*
     public function testCompleteScenario()
