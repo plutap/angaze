@@ -6,6 +6,14 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class EmployeeControllerTest extends WebTestCase
 {
+    public function testUrlIndex()
+    {
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/employee/');
+        $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /employee/");
+    }
+
     /*
     public function testCompleteScenario()
     {
