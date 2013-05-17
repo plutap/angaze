@@ -14,7 +14,7 @@ class JourneyControllerTest extends WebTestCase
         // Create a new entry in the database
         $crawler = $client->request('GET', '/journey/');
         $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /journey/");
-        $crawler = $client->click($crawler->selectLink('Create a new entry')->link());
+        //$crawler = $client->click($crawler->selectLink('Create a new entry')->link());
 
         $this->assertEquals(1, $crawler->filter('td:contains("Warszawa")')->count(), 'Missing element td:contains("Warszawa")');
         $this->assertEquals(1, $crawler->filter('td:contains("Poznań")')->count(), 'Missing element td:contains("Poznań")');
