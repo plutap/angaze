@@ -14,6 +14,11 @@ class SubjectTypeControllerTest extends WebTestCase
         // Create a new entry in the database
         $crawler = $client->request('GET', '/subjecttype/');
         $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /subjecttype/");
+
+        $this->assertEquals(1, $crawler->filter('td:contains("wykład")')->count(), 'Missing element td:contains("wykład")');
+        $this->assertEquals(1, $crawler->filter('td:contains("ćwiczenia")')->count(), 'Missing element td:contains("cwiczenia")');
+        $this->assertEquals(1, $crawler->filter('td:contains("konwersatorium")')->count(), 'Missing element td:contains("konwersatorium")');
+        $this->assertEquals(1, $crawler->filter('td:contains("monograf")')->count(), 'Missing element td:contains("monograf")');
     }
         /*$crawler = $client->click($crawler->selectLink('Create a new entry')->link());
 
