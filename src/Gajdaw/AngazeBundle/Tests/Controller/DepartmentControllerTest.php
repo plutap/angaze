@@ -17,9 +17,27 @@ class DepartmentControllerTest extends WebTestCase
         $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /department/");
 
         // Check data in the show view
-        $this->assertEquals(1, $crawler->filter('td:contains("Informatyka")')->count(), 'Missing element td:contains("Informatyka")');
-        $this->assertEquals(1, $crawler->filter('td:contains("Matematyka")')->count(), 'Missing element td:contains("Matematyka")');
-        $this->assertEquals(1, $crawler->filter('td:contains("Instytut Historii")')->count(), 'Missing element td:contains("Instytut Historii")');
+        //$this->assertEquals(1, $crawler->filter('td:contains("Informatyka")')->count(), 'Missing element td:contains("Informatyka")');
+        //$this->assertEquals(1, $crawler->filter('td:contains("Matematyka")')->count(), 'Missing element td:contains("Matematyka")');
+        //$this->assertEquals(1, $crawler->filter('td:contains("Instytut Historii")')->count(), 'Missing element td:contains("Instytut Historii")');
+
+        //rekordy sparsowane ze strony WWW
+        //do tablicy $rekordy
+        $rekordy = array();
+        $crawler = $crawler->filter('table.records_list > tbody > tr > td:nth-child(2)');
+        foreach ($crawler as $domElement) {
+            $rekordy[] = $domElement->nodeValue;
+        }
+
+        //wyniki, które znamy
+        //na podstawie pliku yaml
+        $expected = array(
+            'Katedra Analizy Funkcjonalnej',
+            'Katedra Analizy Numerycznej i Programowania',
+            'Katedra Analizy Obrazów',
+            'Katedra Literatury i Kultury Angielskiej'
+        );
+        $this->assertEquals($expected, $rekordy, 'Rekordy: department');
     }
 
     /*
