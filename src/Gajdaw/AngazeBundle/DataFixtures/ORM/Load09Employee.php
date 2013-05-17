@@ -19,6 +19,14 @@ class Load09Employee implements FixtureInterface
 
         $yml = Yaml::parse(file_get_contents($filename));
         foreach ($yml as $item) {
+
+            $Position = $manager
+                ->getRepository('GajdawAngazeBundle:Position')
+                ->findOneByName($item['stanowisko']);
+            if (!$Position) {
+                throw new \RuntimeException('Position blad:' . $item['name']);
+            }
+
             $employee = new Employee();
             $employee->setName($item['name']);
             $employee->setSurname($item['surname']);
