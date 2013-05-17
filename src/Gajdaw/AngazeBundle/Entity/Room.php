@@ -28,14 +28,6 @@ class Room
      */
     private $name;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="tmp", type="string", length=255)
-     */
-
-    private $nazwa;
-
 
 
     /**
@@ -45,9 +37,6 @@ class Room
 
 
 
-
-
-    private $tmp;
 
 
     /**
@@ -69,14 +58,14 @@ class Room
     public function setName($name)
     {
         $this->name = $name;
-    
+
         return $this;
     }
 
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -90,29 +79,7 @@ class Room
     {
         $this->employee = new \Doctrine\Common\Collections\ArrayCollection();
     }
-    
-    /**
-     * Set nazwa
-     *
-     * @param string $nazwa
-     * @return Room
-     */
-    public function setNazwa($nazwa)
-    {
-        $this->nazwa = $nazwa;
-    
-        return $this;
-    }
 
-    /**
-     * Get nazwa
-     *
-     * @return string 
-     */
-    public function getNazwa()
-    {
-        return $this->nazwa;
-    }
 
     /**
      * Add employee
@@ -123,7 +90,7 @@ class Room
     public function addEmployee(\Gajdaw\AngazeBundle\Entity\Employee $employee)
     {
         $this->employee[] = $employee;
-    
+
         return $this;
     }
 
@@ -140,7 +107,7 @@ class Room
     /**
      * Get employee
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getEmployee()
     {
