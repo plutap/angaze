@@ -7,7 +7,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 use Gajdaw\AngazeBundle\Entity\Room;
 use Symfony\Component\Yaml\Yaml;
 
-class Load01Room implements FixtureInterface
+class Load20Room implements FixtureInterface
 {
     function load(ObjectManager $manager)
     {
