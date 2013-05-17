@@ -1,3 +1,4 @@
-- { name: Szydełkowania, faculty: Matematyczno-Przyrodniczy }
-- { name: Prędkości pojazdów, faculty: NaukHumanistycznych }
-- { name: Ubijania masła, faculty: NaukHumanistycznych }
+- { name: Architektura krajobrazu, faculty: Matematyczno-Przyrodniczy }
+- { name: Informatyka, faculty: Matematyczno-Przyrodniczy }
+- { name: Matematyka, faculty: Matematyczno-Przyrodniczy }
+- { name: Instytut Historii, faculty: NaukHumanistycznych }
