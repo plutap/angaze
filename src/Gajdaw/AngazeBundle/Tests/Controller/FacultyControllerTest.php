@@ -14,6 +14,23 @@ class FacultyControllerTest extends WebTestCase
         $this->assertEquals(1, $crawler->filter('td:contains("NaukHumanistycznych")')->count(), 'Missing element td:contains("NaukHumanistycznych")');
         $this->assertEquals(1, $crawler->filter('td:contains("Matematyczno-Przyrodniczy")')->count(), 'Missing element td:contains("Matematyczno-Przyrodniczy")');
         $this->assertEquals(1, $crawler->filter('td:contains("Dziennikarstwa")')->count(), 'Missing element td:contains("Dziennikarstwa")');
+
+        $rekordy = array();
+        $crawler = $crawler->filter('table.records_list > tbody > tr > td:nth-child(2)');
+        foreach ($crawler as $domElement) {
+            $rekordy[] = $domElement->nodeValue;
+        }
+
+        //wyniki, które znamy
+        //na podstawie pliku yaml
+        $expected = array(
+            'Dziennikarstwa',
+            'Matematyczno-Przyrodniczy',
+            'NaukHumanistycznych'
+        );
+        $this->assertEquals($expected, $rekordy, 'Rekordy: faculty');
+
+
     }
     /*
     public function testCompleteScenario()

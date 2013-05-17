@@ -17,13 +17,12 @@
                 <td><a href="{{ path('faculty_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                 <td>{{ entity.name }}</td>
                 <td>
-                <ul>
-                    {% for d in entity.department %}
-                        <li>
-                            {{ d.name }}
-                        </li>
-                    {% endfor %}
-                </ul>
+                    <ul>
+                        {% for d in entity.department %}
+                                <td><a href="{{ path('department_show', { 'id': d.id }) }}"> {{ d.name }} </a></td>
+                            <br>
+                        {% endfor %}
+                    </ul>
                 </td>
                 <td>
                 <ul>
