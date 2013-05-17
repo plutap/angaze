@@ -10,6 +10,7 @@
                 <th>Name</th>
                 <th>Surname</th>
                 <th>Position</th>
+                <th>Room</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -20,6 +21,7 @@
                 <td>{{ entity.name }}</td>
                 <td>{{ entity.surname }}</td>
                 <td><a href="{{ path('position_show', { 'id': entity.position.id }) }}">{{ entity.position }}</a></td>
+                <td><a href="{{ path('room_show', { 'id': entity.room.id }) }}">{{ entity.room }}</a></td>
                 <td>
                 <ul>
                     <li>
