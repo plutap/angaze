@@ -1,3 +1,3 @@
-- { name: Janek, surname: Kowalski, stanowisko: Profesor }
-- { name: Anna,  surname: Nowak, stanowisko: Asystent }
-- { name: Marek, surname: Nijaki, stanowisko: Profesor }
+- { name: Janek, surname: Kowalski, stanowisko: Profesor, pokoj: Dział IT }
+- { name: Anna,  surname: Nowak, stanowisko: Asystent, pokoj: Administracja }
+- { name: Marek, surname: Nijaki, stanowisko: Profesor, pokoj: Administracja }

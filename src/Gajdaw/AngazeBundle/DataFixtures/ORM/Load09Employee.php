@@ -27,6 +27,13 @@ class Load09Employee implements FixtureInterface
                 throw new \RuntimeException('Position blad:' . $item['name']);
             }
 
+            $Room = $manager
+                ->getRepository('GajdawAngazeBundle:Room')
+                ->findOneByName($item['pokoj']);
+            if (!$Position) {
+                throw new \RuntimeException('Room blad:' . $item['name']);
+            }
+
             $employee = new Employee();
             $employee->setName($item['name']);
             $employee->setSurname($item['surname']);
