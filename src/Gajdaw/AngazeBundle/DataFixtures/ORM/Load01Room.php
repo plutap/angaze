@@ -21,7 +21,6 @@ class Load01Room implements FixtureInterface
         foreach ($yml as $item) {
                         $room = new Room();
                         $room->setName($item['name']);
-                        $room->setTmp($item['tmp']);
                         $manager->persist($room);
         }
         $manager->flush();

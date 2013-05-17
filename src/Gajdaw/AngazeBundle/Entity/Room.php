@@ -84,28 +84,6 @@ class Room
     }
 
     /**
-     * Set tmp
-     *
-     * @param string $tmp
-     * @return Room
-     */
-    public function setTmp($tmp)
-    {
-        $this->tmp = $tmp;
-
-        return $this;
-    }
-
-    /**
-     * Get tmp
-     *
-     * @return string
-     */
-    public function getTmp()
-    {
-        return $this->tmp;
-    }
-    /**
      * Constructor
      */
     public function __construct()
