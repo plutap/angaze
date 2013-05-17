@@ -15,10 +15,34 @@ class CourseControllerTest extends WebTestCase
         $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /course/");
 
 
-        $this->assertEquals(1, $crawler->filter('td:contains("Matematyka")')->count(), 'Missing element td:contains("Matematyka")');
-        $this->assertEquals(1, $crawler->filter('td:contains("Informatyka")')->count(), 'Missing element td:contains("Informatyka")');
-        $this->assertEquals(1, $crawler->filter('td:contains("Architektura krajobrazu")')->count(), 'Missing element td:contains("Architektura krajobrazu")');
-        $this->assertEquals(1, $crawler->filter('td:contains("Gospodarka przestrzenna")')->count(), 'Missing element td:contains("Gospodarka przestrzenna")');
+//        $this->assertEquals(1, $crawler->filter('td:contains("Matematyka")')->count(), 'Missing element td:contains("Matematyka")');
+//        $this->assertEquals(1, $crawler->filter('td:contains("Informatyka")')->count(), 'Missing element td:contains("Informatyka")');
+//        $this->assertEquals(1, $crawler->filter('td:contains("Architektura krajobrazu")')->count(), 'Missing element td:contains("Architektura krajobrazu")');
+//        $this->assertEquals(1, $crawler->filter('td:contains("Gospodarka przestrzenna")')->count(), 'Missing element td:contains("Gospodarka przestrzenna")');
+
+
+        //rekordy sparsowane ze strony WWW
+        //do tablicy $rekordy
+        $rekordy = array();
+        $crawler = $crawler->filter('table.records_list > tbody > tr > td:nth-child(2)');
+        foreach ($crawler as $domElement) {
+            $rekordy[] = $domElement->nodeValue;
+        }
+
+        //wyniki, które znamy
+        //na podstawie pliku yaml
+        $expected = array(
+            'Matematyka',
+            'Informatyka',
+            'Architektura krajobrazu',
+            'Gospodarka przestrzenna'
+        );
+        $this->assertEquals($expected, $rekordy, 'Rekordy: course');
+
+
+
+
+
 
 
     }
