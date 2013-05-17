@@ -15,7 +15,13 @@ class DepartmentControllerTest extends WebTestCase
         // Create a new entry in the database
         $crawler = $client->request('GET', '/department/');
         $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /department/");
+
+        // Check data in the show view
+        $this->assertEquals(1, $crawler->filter('td:contains("Szydełkowania")')->count(), 'Missing element td:contains("Szydełkowania")');
+        $this->assertEquals(1, $crawler->filter('td:contains("Prędkości pojazdów")')->count(), 'Missing element td:contains("Prędkości pojazdów")');
+        $this->assertEquals(1, $crawler->filter('td:contains("Ubijania masła")')->count(), 'Missing element td:contains("Ubijania masła")');
     }
+
     /*
         $crawler = $client->click($crawler->selectLink('Create a new entry')->link());
 
@@ -28,8 +34,7 @@ class DepartmentControllerTest extends WebTestCase
         $client->submit($form);
         $crawler = $client->followRedirect();
 
-        // Check data in the show view
-        $this->assertGreaterThan(0, $crawler->filter('td:contains("Test")')->count(), 'Missing element td:contains("Test")');
+
 
         // Edit the entity
         $crawler = $client->click($crawler->selectLink('Edit')->link());
@@ -52,6 +57,5 @@ class DepartmentControllerTest extends WebTestCase
         // Check the entity has been delete on the list
         $this->assertNotRegExp('/Foo/', $client->getResponse()->getContent());
     }
-
     */
 }
