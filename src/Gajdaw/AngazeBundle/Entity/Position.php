@@ -9,7 +9,8 @@ use Gedmo\Mapping\Annotation as Gedmo;
  * Position
  *
  * @ORM\Table()
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Gajdaw\AngazeBundle\Entity\PositionRepository")
+ *
  */
 class Position
 {
