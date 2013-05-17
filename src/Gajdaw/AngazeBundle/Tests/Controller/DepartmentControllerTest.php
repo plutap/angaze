@@ -6,8 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class DepartmentControllerTest extends WebTestCase
 {
-    /*
-    public function testCompleteScenario()
+
+    public function testUrlIndex()
     {
         // Create a new client to browse the application
         $client = static::createClient();
@@ -15,6 +15,8 @@ class DepartmentControllerTest extends WebTestCase
         // Create a new entry in the database
         $crawler = $client->request('GET', '/department/');
         $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /department/");
+    }
+    /*
         $crawler = $client->click($crawler->selectLink('Create a new entry')->link());
 
         // Fill in the form and submit it
