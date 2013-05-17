@@ -6,6 +6,22 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class ConferenceControllerTest extends WebTestCase
 {
+
+    public function testCompleteScenario()
+    {
+        // Create a new client to browse the application
+        $client = static::createClient();
+
+        // Create a new entry in the database
+        $crawler = $client->request('GET', '/position/');
+        $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /position/");
+
+
+
+        $this->assertEquals(1, $crawler->filter('td:contains("Lubelskie Dni Informatyki")')->count(), 'Missing element td:contains("Lubelskie Dni Informatyki")');
+        $this->assertEquals(1, $crawler->filter('td:contains("Oracle day 2013")')->count(), 'Missing element td:contains("Oracle day 2013")');
+
+    }
     /*
     public function testCompleteScenario()
     {
