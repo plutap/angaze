@@ -9,12 +9,13 @@ class CourseTypeControllerTest extends WebTestCase
 
     public function UrlIndex()
     {
-        // Create a new client to browse the application
         $client = static::createClient();
-
-        // Create a new entry in the database
         $crawler = $client->request('GET', '/coursetype/');
         $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /coursetype/");
+
+        $this->assertEquals(1, $crawler->filter('td:contains("licencjackie")')->count(), 'Missing element td:contains("licencjackie")');
+        $this->assertEquals(1, $crawler->filter('td:contains("magisterskie")')->count(), 'Missing element td:contains("magisterskie")');
+        $this->assertEquals(1, $crawler->filter('td:contains("inżynierskie")')->count(), 'Missing element td:contains("inżynierskie")');
     }/*
         $crawler = $client->click($crawler->selectLink('Create a new entry')->link());
 
