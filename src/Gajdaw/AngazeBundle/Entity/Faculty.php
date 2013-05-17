@@ -10,6 +10,8 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *
  * @ORM\Table()
  * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Gajdaw\AngazeBundle\Entity\FacultyRepository")
+ *
  */
 class Faculty
 {
