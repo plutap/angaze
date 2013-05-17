@@ -10,6 +10,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *
  * @ORM\Table()
  * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Gajdaw\AngazeBundle\Entity\CourseRepository")
  */
 class Course
 {
@@ -45,7 +46,7 @@ class Course
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -61,14 +62,14 @@ class Course
     public function setName($name)
     {
         $this->name = $name;
-    
+
         return $this;
     }
 
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -104,14 +105,14 @@ class Course
     public function setCourseType(\Gajdaw\AngazeBundle\Entity\CourseType $courseType = null)
     {
         $this->courseType = $courseType;
-    
+
         return $this;
     }
 
     /**
      * Get courseType
      *
-     * @return \Gajdaw\AngazeBundle\Entity\CourseType 
+     * @return \Gajdaw\AngazeBundle\Entity\CourseType
      */
     public function getCourseType()
     {
