@@ -49,13 +49,6 @@ class Employee
 
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="foo", type="string", length=255)
-     */
-    private $foo;
-
-    /**
      * Get id
      *
      * @return integer
@@ -155,26 +148,4 @@ class Employee
         return $this->position;
     }
 
-    /**
-     * Set foo
-     *
-     * @param string $foo
-     * @return Employee
-     */
-    public function setFoo($foo)
-    {
-        $this->foo = $foo;
-    
-        return $this;
-    }
-
-    /**
-     * Get foo
-     *
-     * @return string 
-     */
-    public function getFoo()
-    {
-        return $this->foo;
-    }
 }
