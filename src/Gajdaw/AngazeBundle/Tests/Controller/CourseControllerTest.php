@@ -6,6 +6,17 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class CourseControllerTest extends WebTestCase
 {
+
+
+    public function testUrlIndex()
+    {
+        $client = static::createClient();
+        $crawler = $client->request('GET', '/course/');
+        $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /course/");
+    }
+
+
+
     /*
     public function testCompleteScenario()
     {
