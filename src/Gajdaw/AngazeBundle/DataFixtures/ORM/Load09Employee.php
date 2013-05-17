@@ -7,7 +7,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 use Gajdaw\AngazeBundle\Entity\Employee;
 use Symfony\Component\Yaml\Yaml;
 
-class Load01Employee implements FixtureInterface
+class Load09Employee implements FixtureInterface
 {
     function load(ObjectManager $manager)
     {
