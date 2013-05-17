@@ -6,6 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class RoomControllerTest extends WebTestCase
 {
+    public function testUrlIndex()
+    {
+        $client = static::createClient();
+        $crawler = $client->request('GET', '/room/');
+        $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /room/");
+    }
+
     /*
     public function testCompleteScenario()
     {
