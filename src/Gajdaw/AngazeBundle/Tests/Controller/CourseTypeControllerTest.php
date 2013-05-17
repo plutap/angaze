@@ -29,9 +29,9 @@ class CourseTypeControllerTest extends WebTestCase
         //wyniki, które znamy
         //na podstawie pliku yaml
         $expected = array(
+            'inzynierskie',
             'licencjackie',
-            'magisterskie',
-            'inzynierskie'
+            'magisterskie'
         );
         $this->assertEquals($expected, $rekordy, 'Rekordy: courseType');
     }/*
