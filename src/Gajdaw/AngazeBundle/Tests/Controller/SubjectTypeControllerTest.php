@@ -15,11 +15,29 @@ class SubjectTypeControllerTest extends WebTestCase
         $crawler = $client->request('GET', '/subjecttype/');
         $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /subjecttype/");
 
-        $this->assertEquals(1, $crawler->filter('td:contains("wykład")')->count(), 'Missing element td:contains("wykład")');
-        $this->assertEquals(1, $crawler->filter('td:contains("ćwiczenia")')->count(), 'Missing element td:contains("cwiczenia")');
-        $this->assertEquals(1, $crawler->filter('td:contains("konwersatorium")')->count(), 'Missing element td:contains("konwersatorium")');
-        $this->assertEquals(1, $crawler->filter('td:contains("monograf")')->count(), 'Missing element td:contains("monograf")');
-    }
+        //$this->assertEquals(1, $crawler->filter('td:contains("wykład")')->count(), 'Missing element td:contains("wykład")');
+        //$this->assertEquals(1, $crawler->filter('td:contains("ćwiczenia")')->count(), 'Missing element td:contains("cwiczenia")');
+        //$this->assertEquals(1, $crawler->filter('td:contains("konwersatorium")')->count(), 'Missing element td:contains("konwersatorium")');
+        //$this->assertEquals(1, $crawler->filter('td:contains("monograf")')->count(), 'Missing element td:contains("monograf")');
+
+        //rekordy sparsowane ze strony WWW
+        //do tablicy $rekordy
+        $rekordy = array();
+        $crawler = $crawler->filter('table.records_list > tbody > tr > td:nth-child(2)');
+        foreach ($crawler as $domElement) {
+            $rekordy[] = $domElement -> nodeValue;
+        }
+
+        //wyniki, które znamy
+        //na podstawie pliku yaml
+        $expected = array(
+            'wykład',
+            'ćwiczenia',
+            'konwersatorium',
+            'monograf'
+        );
+        $this->assertEquals($expected, $rekordy, 'Rekordy: subjectType');
+}
         /*$crawler = $client->click($crawler->selectLink('Create a new entry')->link());
 
         // Fill in the form and submit it
