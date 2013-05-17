@@ -7,7 +7,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 use Gajdaw\AngazeBundle\Entity\Journey;
 use Symfony\Component\Yaml\Yaml;
 
-class LoadJourney implements FixtureInterface
+class Load01Journey implements FixtureInterface
 {
     function load(ObjectManager $manager)
     {
