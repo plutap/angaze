@@ -14,6 +14,11 @@ class OrganizationControllerTest extends WebTestCase
         // Create a new entry in the database
         $crawler = $client->request('GET', '/organization/');
         $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /organization/");
+
+        $this->assertEquals(1, $crawler->filter('td:contains("KNI")')->count(), 'Missing element td:contains("KNI")');
+        $this->assertEquals(1, $crawler->filter('td:contains("KNAK")')->count(), 'Missing element td:contains("KNAK")');
+        $this->assertEquals(1, $crawler->filter('td:contains("KNH")')->count(), 'Missing element td:contains("KNH")');
+        $this->assertEquals(1, $crawler->filter('td:contains("SKNI")')->count(), 'Missing element td:contains("SKNI")');
     }
 
     /*
