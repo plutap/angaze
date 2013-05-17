@@ -7,7 +7,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 use Gajdaw\AngazeBundle\Entity\Position;
 use Symfony\Component\Yaml\Yaml;
 
-class LoadPosition implements FixtureInterface
+class Load01Position implements FixtureInterface
 {
     function load(ObjectManager $manager)
     {
