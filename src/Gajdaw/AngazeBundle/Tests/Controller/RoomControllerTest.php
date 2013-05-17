@@ -10,7 +10,10 @@ class RoomControllerTest extends WebTestCase
     {
         $client = static::createClient();
         $crawler = $client->request('GET', '/room/');
-        $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /room/");
+        //$this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /room/");
+
+        $this->assertEquals(1, $crawler->filter('td:contains("Dział IT")')->count(), 'Missing element td:contains("Dział IT")');
+        $this->assertEquals(1, $crawler->filter('td:contains("Administacja")')->count(), 'Missing element td:contains("Administacja")');
     }
 
     /*
