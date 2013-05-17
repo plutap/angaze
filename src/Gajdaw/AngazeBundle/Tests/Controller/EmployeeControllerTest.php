@@ -11,7 +11,9 @@ class EmployeeControllerTest extends WebTestCase
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/employee/');
-        $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /employee/");
+        $this->assertEquals(1, $crawler->filter('td:contains("Janek")')->count(), 'Missing element td:contains("Janek")');
+        $this->assertEquals(1, $crawler->filter('td:contains("Anna")')->count(), 'Missing element td:contains("Anna")');
+        $this->assertEquals(1, $crawler->filter('td:contains("Marek")')->count(), 'Missing element td:contains("Marek")');
     }
 
     /*
