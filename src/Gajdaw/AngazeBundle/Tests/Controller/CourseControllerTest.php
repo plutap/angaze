@@ -32,18 +32,12 @@ class CourseControllerTest extends WebTestCase
         //wyniki, które znamy
         //na podstawie pliku yaml
         $expected = array(
-            'Matematyka',
-            'Informatyka',
             'Architektura krajobrazu',
-            'Gospodarka przestrzenna'
+            'Gospodarka przestrzenna',
+            'Informatyka',
+            'Matematyka',
         );
         $this->assertEquals($expected, $rekordy, 'Rekordy: course');
-
-
-
-
-
-
 
     }
 
