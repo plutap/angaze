@@ -47,6 +47,7 @@ class Employee
      */
     private $surname;
 
+
     /**
      * Get id
      *
@@ -133,17 +134,18 @@ class Employee
     public function setPosition(\Gajdaw\AngazeBundle\Entity\Position $position = null)
     {
         $this->position = $position;
-    
+
         return $this;
     }
 
     /**
      * Get position
      *
-     * @return \Gajdaw\AngazeBundle\Entity\Position 
+     * @return \Gajdaw\AngazeBundle\Entity\Position
      */
     public function getPosition()
     {
         return $this->position;
     }
+
 }

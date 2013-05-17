@@ -275,5 +275,9 @@ XIV. Procedura definiowania relacji
 
 
 
+XV. Aktualizacja bazy danych (bez migracji)
+
+php app/console doctrine:schema:update --force
+php app/console doctrine:fixtures:load
 
 
