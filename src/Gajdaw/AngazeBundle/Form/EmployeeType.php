@@ -15,6 +15,7 @@ class EmployeeType extends AbstractType
             ->add('slug')
             ->add('surname')
             ->add('position')
+            ->add('room');
         ;
     }
 

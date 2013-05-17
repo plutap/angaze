@@ -35,6 +35,12 @@ class Employee
     protected $position;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Room", inversedBy="employee")
+     */
+    protected $room;
+
+
+    /**
      * @Gedmo\Slug(fields={"name", "surname"})
      * @ORM\Column(length=128, unique=false, nullable=true)
      */
@@ -148,4 +154,27 @@ class Employee
         return $this->position;
     }
 
+
+    /**
+     * Set room
+     *
+     * @param \Gajdaw\AngazeBundle\Entity\Room $room
+     * @return Employee
+     */
+    public function setRoom(\Gajdaw\AngazeBundle\Entity\Room $room = null)
+    {
+        $this->room = $room;
+    
+        return $this;
+    }
+
+    /**
+     * Get room
+     *
+     * @return \Gajdaw\AngazeBundle\Entity\Room 
+     */
+    public function getRoom()
+    {
+        return $this->room;
+    }
 }
