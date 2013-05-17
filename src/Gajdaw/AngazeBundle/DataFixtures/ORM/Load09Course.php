@@ -7,7 +7,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 use Gajdaw\AngazeBundle\Entity\Course;
 use Symfony\Component\Yaml\Yaml;
 
-class Load01Course implements FixtureInterface
+class Load09Course implements FixtureInterface
 {
     function load(ObjectManager $manager)
     {
@@ -19,8 +19,17 @@ class Load01Course implements FixtureInterface
 
         $yml = Yaml::parse(file_get_contents($filename));
         foreach ($yml as $item) {
+
+            $CourseType = $manager
+                ->getRepository('GajdawAngazeBundle:CourseType')
+                ->findOneByName($item['typ']);
+            if (!$CourseType) {
+                throw new \RuntimeException('Course blad:' . $item['name']);
+            }
+
             $course = new Course();
             $course->setName($item['name']);
+            $course->setCourseType($CourseType);
             $manager->persist($course);
         }
         $manager->flush();
