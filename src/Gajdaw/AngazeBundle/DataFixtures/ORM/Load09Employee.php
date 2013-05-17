@@ -24,14 +24,14 @@ class Load09Employee implements FixtureInterface
                 ->getRepository('GajdawAngazeBundle:Position')
                 ->findOneByName($item['stanowisko']);
             if (!$Position) {
-                throw new \RuntimeException('Position blad:' . $item['name']);
+                throw new \RuntimeException('Position blad:' . $item['surname']);
             }
 
             $Room = $manager
                 ->getRepository('GajdawAngazeBundle:Room')
                 ->findOneByName($item['pokoj']);
-            if (!$Position) {
-                throw new \RuntimeException('Room blad:' . $item['name']);
+            if (!$Room) {
+                throw new \RuntimeException('Room blad:' . $item['surname']);
             }
 
             $employee = new Employee();
