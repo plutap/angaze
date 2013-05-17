@@ -13,6 +13,14 @@ class CourseControllerTest extends WebTestCase
         $client = static::createClient();
         $crawler = $client->request('GET', '/course/');
         $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /course/");
+
+
+        $this->assertEquals(1, $crawler->filter('td:contains("Matematyka")')->count(), 'Missing element td:contains("Matematyka")');
+        $this->assertEquals(1, $crawler->filter('td:contains("Informatyka")')->count(), 'Missing element td:contains("Informatyka")');
+        $this->assertEquals(1, $crawler->filter('td:contains("Architektura krajobrazu")')->count(), 'Missing element td:contains("Architektura krajobrazu")');
+        $this->assertEquals(1, $crawler->filter('td:contains("Gospodarka przestrzenna")')->count(), 'Missing element td:contains("Gospodarka przestrzenna")');
+
+
     }
 
 
