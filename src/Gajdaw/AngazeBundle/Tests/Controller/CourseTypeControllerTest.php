@@ -13,9 +13,27 @@ class CourseTypeControllerTest extends WebTestCase
         $crawler = $client->request('GET', '/coursetype/');
         $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /coursetype/");
 
-        $this->assertEquals(1, $crawler->filter('td:contains("licencjackie")')->count(), 'Missing element td:contains("licencjackie")');
-        $this->assertEquals(1, $crawler->filter('td:contains("magisterskie")')->count(), 'Missing element td:contains("magisterskie")');
-        $this->assertEquals(1, $crawler->filter('td:contains("inżynierskie")')->count(), 'Missing element td:contains("inżynierskie")');
+        /* $this->assertEquals(1, $crawler->filter('td:contains("licencjackie")')->count(), 'Missing element td:contains("licencjackie")');
+         $this->assertEquals(1, $crawler->filter('td:contains("magisterskie")')->count(), 'Missing element td:contains("magisterskie")');
+         $this->assertEquals(1, $crawler->filter('td:contains("inżynierskie")')->count(), 'Missing element td:contains("inżynierskie")');
+         */
+
+        //rekordy sparsowane ze strony WWW
+        //do tablicy $rekordy
+        $rekordy = array();
+        $crawler = $crawler->filter('table.records_list > tbody > tr > td:nth-child(2)');
+        foreach ($crawler as $domElement) {
+            $rekordy[] = $domElement->nodeValue;
+        }
+
+        //wyniki, które znamy
+        //na podstawie pliku yaml
+        $expected = array(
+            'inzynierskie',
+            'licencjackie',
+            'magisterskie'
+        );
+        $this->assertEquals($expected, $rekordy, 'Rekordy: courseType');
     }/*
         $crawler = $client->click($crawler->selectLink('Create a new entry')->link());
 
