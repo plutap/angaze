@@ -1,7 +1,7 @@
-{% extends "GajdawAngazeBundle::layout.html.twig" %}
+{% extends '::base.html.twig' %}
 
-{% block contents %}
-    <h1>Employee</h1>
+{% block body -%}
+    <h1>EmployeeSubject</h1>
 
     <table class="record_properties">
         <tbody>
@@ -13,30 +13,22 @@
                 <th>Name</th>
                 <td>{{ entity.name }}</td>
             </tr>
-            <tr>
-                <th>Surname</th>
-                <td>{{ entity.surname }}</td>
-            </tr>
-            <tr>
-                <th>Position</th>
-                <td><a href="{{ path('position_show', { 'id': entity.position.id }) }}">{{ entity.position }}</a></td>
-            </tr>
         </tbody>
     </table>
 
         <ul class="record_actions">
     <li>
-        <a href="{{ path('employee') }}">
+        <a href="{{ path('employeesubject') }}">
             Back to the list
         </a>
     </li>
     <li>
-        <a href="{{ path('employee_edit', { 'id': entity.id }) }}">
+        <a href="{{ path('employeesubject_edit', { 'id': entity.id }) }}">
             Edit
         </a>
     </li>
     <li>
-        <form action="{{ path('employee_delete', { 'id': entity.id }) }}" method="post">
+        <form action="{{ path('employeesubject_delete', { 'id': entity.id }) }}" method="post">
             <input type="hidden" name="_method" value="DELETE" />
             {{ form_widget(delete_form) }}
             <button type="submit">Delete</button>
