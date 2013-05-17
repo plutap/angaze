@@ -1,4 +1,4 @@
-- { name: Architektura krajobrazu, faculty: Matematyczno-Przyrodniczy }
-- { name: Informatyka, faculty: Matematyczno-Przyrodniczy }
-- { name: Matematyka, faculty: Matematyczno-Przyrodniczy }
-- { name: Instytut Historii, faculty: NaukHumanistycznych }
+- { name: Katedra Analizy Obrazów, faculty: Matematyczno-Przyrodniczy }
+- { name: Katedra Analizy Funkcjonalnej, faculty: Matematyczno-Przyrodniczy }
+- { name: Katedra Literatury i Kultury Angielskiej, faculty: NaukHumanistycznych }
+- { name: Katedra Analizy Numerycznej i Programowania, faculty: Matematyczno-Przyrodniczy }

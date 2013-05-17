@@ -44,7 +44,7 @@ class CourseType
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -60,14 +60,14 @@ class CourseType
     public function setName($name)
     {
         $this->name = $name;
-    
+
         return $this;
     }
 
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -103,7 +103,7 @@ class CourseType
     {
         $this->course = new \Doctrine\Common\Collections\ArrayCollection();
     }
-    
+
     /**
      * Add course
      *
@@ -113,7 +113,7 @@ class CourseType
     public function addCourse(\Gajdaw\AngazeBundle\Entity\Course $course)
     {
         $this->course[] = $course;
-    
+
         return $this;
     }
 
@@ -130,10 +130,17 @@ class CourseType
     /**
      * Get course
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getCourse()
     {
         return $this->course;
     }
+
+    function __toString()
+    {
+        return (string)$this->getName();
+
+    }
+
 }
