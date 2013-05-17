@@ -18,7 +18,10 @@ class DepartmentControllerTest extends WebTestCase
 
         // Check data in the show view
         $this->assertEquals(1, $crawler->filter('td:contains("Szydełkowania")')->count(), 'Missing element td:contains("Szydełkowania")');
+        $this->assertEquals(1, $crawler->filter('td:contains("Prędkości pojazdów")')->count(), 'Missing element td:contains("Prędkości pojazdów")');
+        $this->assertEquals(1, $crawler->filter('td:contains("Ubijania masła")')->count(), 'Missing element td:contains("Ubijania masła")');
     }
+
     /*
         $crawler = $client->click($crawler->selectLink('Create a new entry')->link());
 
