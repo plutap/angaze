@@ -22,7 +22,7 @@ class SubjectTypeControllerTest extends WebTestCase
 
         //rekordy sparsowane ze strony WWW
         //do tablicy $rekordy
-        $rekordy - array();
+        $rekordy = array();
         $crawler = $crawler->filter('table.records_list > tbody > tr > td:nth-child(2)');
         foreach ($crawler as $domElement) {
             $rekordy[] = $domElement -> nodeValue;
