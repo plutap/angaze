@@ -7,7 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 class CourseTypeControllerTest extends WebTestCase
 {
 
-    public function UrlIndex()
+    public function testUrlIndex()
     {
         $client = static::createClient();
         $crawler = $client->request('GET', '/coursetype/');
