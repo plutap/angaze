@@ -12,7 +12,6 @@ class RoomType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('tmp')
             ->add('employee')
         ;
     }
