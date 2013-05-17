@@ -7,7 +7,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 use Gajdaw\AngazeBundle\Entity\Conference;
 use Symfony\Component\Yaml\Yaml;
 
-class LoadConference implements FixtureInterface
+class Load01Conference implements FixtureInterface
 {
     function load(ObjectManager $manager)
     {
