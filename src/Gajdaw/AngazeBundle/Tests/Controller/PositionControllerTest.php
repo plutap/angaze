@@ -14,6 +14,12 @@ class PositionControllerTest extends WebTestCase
         // Create a new entry in the database
         $crawler = $client->request('GET', '/position/');
         $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /position/");
+
+
+
+        $this->assertEquals(1, $crawler->filter('td:contains("Profesor")')->count(), 'Missing element td:contains("Profesor")');
+        $this->assertEquals(1, $crawler->filter('td:contains("Asystent")')->count(), 'Missing element td:contains("Asystent")');
+        $this->assertEquals(1, $crawler->filter('td:contains("Adiunkt")')->count(), 'Missing element td:contains("Adiunkt")');
     }
         /*
         public function testCompleteScenario()
