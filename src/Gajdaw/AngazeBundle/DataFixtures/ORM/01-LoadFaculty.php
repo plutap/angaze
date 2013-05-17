@@ -4,10 +4,10 @@ namespace Gajdaw\AngazeBundle\DataFixtures\ORM;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
-use Gajdaw\AngazeBundle\Entity\Journey;
+use Gajdaw\AngazeBundle\Entity\Faculty;
 use Symfony\Component\Yaml\Yaml;
 
-class Load01Journey implements FixtureInterface
+class LoadFaculty implements FixtureInterface
 {
     function load(ObjectManager $manager)
     {
@@ -15,13 +15,13 @@ class Load01Journey implements FixtureInterface
             __DIR__ .
                 DIRECTORY_SEPARATOR . '..' .
                 DIRECTORY_SEPARATOR . '..' .
-                DIRECTORY_SEPARATOR . 'Data/journey.yml';
+                DIRECTORY_SEPARATOR . 'Data/faculty.yml';
 
         $yml = Yaml::parse(file_get_contents($filename));
         foreach ($yml as $item) {
-            $journey = new Journey();
-            $journey->setName($item['name']);
-            $manager->persist($journey);
+            $faculty = new Faculty();
+            $faculty->setName($item['name']);
+            $manager->persist($faculty);
         }
         $manager->flush();
 

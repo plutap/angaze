@@ -7,7 +7,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 use Gajdaw\AngazeBundle\Entity\Course;
 use Symfony\Component\Yaml\Yaml;
 
-class Load09Course implements FixtureInterface
+class LoadCourse implements FixtureInterface
 {
     function load(ObjectManager $manager)
     {

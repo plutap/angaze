@@ -7,7 +7,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 use Gajdaw\AngazeBundle\Entity\Organization;
 use Symfony\Component\Yaml\Yaml;
 
-class Load01Organization implements FixtureInterface
+class LoadOrganization implements FixtureInterface
 {
     public function load(ObjectManager $manager)
     {

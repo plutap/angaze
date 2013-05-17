@@ -4,10 +4,10 @@ namespace Gajdaw\AngazeBundle\DataFixtures\ORM;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
-use Gajdaw\AngazeBundle\Entity\SubjectType;
+use Gajdaw\AngazeBundle\Entity\Position;
 use Symfony\Component\Yaml\Yaml;
 
-class Load01SubjectType implements FixtureInterface
+class LoadPosition implements FixtureInterface
 {
     function load(ObjectManager $manager)
     {
@@ -15,13 +15,13 @@ class Load01SubjectType implements FixtureInterface
             __DIR__ .
                 DIRECTORY_SEPARATOR . '..' .
                 DIRECTORY_SEPARATOR . '..' .
-                DIRECTORY_SEPARATOR . 'Data/subjectType.yml';
+                DIRECTORY_SEPARATOR . 'Data/position.yml';
 
         $yml = Yaml::parse(file_get_contents($filename));
         foreach ($yml as $item) {
-            $subjectType = new SubjectType();
-            $subjectType->setName($item['name']);
-            $manager->persist($subjectType);
+            $position = new Position();
+            $position->setName($item['name']);
+            $manager->persist($position);
         }
         $manager->flush();
 

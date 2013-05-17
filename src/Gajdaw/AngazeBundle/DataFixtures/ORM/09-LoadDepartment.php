@@ -7,7 +7,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 use Gajdaw\AngazeBundle\Entity\Department;
 use Symfony\Component\Yaml\Yaml;
 
-class Load09Department implements FixtureInterface
+class LoadDepartment implements FixtureInterface
 {
     function load(ObjectManager $manager)
     {

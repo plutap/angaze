@@ -4,10 +4,10 @@ namespace Gajdaw\AngazeBundle\DataFixtures\ORM;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
-use Gajdaw\AngazeBundle\Entity\CourseType;
+use Gajdaw\AngazeBundle\Entity\SubjectType;
 use Symfony\Component\Yaml\Yaml;
 
-class Load01CourseType implements FixtureInterface
+class LoadSubjectType implements FixtureInterface
 {
     function load(ObjectManager $manager)
     {
@@ -15,14 +15,13 @@ class Load01CourseType implements FixtureInterface
             __DIR__ .
                 DIRECTORY_SEPARATOR . '..' .
                 DIRECTORY_SEPARATOR . '..' .
-                DIRECTORY_SEPARATOR . 'Data/courseType.yml';
+                DIRECTORY_SEPARATOR . 'Data/subjectType.yml';
 
         $yml = Yaml::parse(file_get_contents($filename));
         foreach ($yml as $item) {
-            $courseType = new CourseType();
-            $courseType->setName($item['name']);
-            $courseType->setTmp($item['tmp']);
-            $manager->persist($courseType);
+            $subjectType = new SubjectType();
+            $subjectType->setName($item['name']);
+            $manager->persist($subjectType);
         }
         $manager->flush();
 
