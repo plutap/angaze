@@ -1,3 +1,9 @@
+#
+# uwaga: kolejność ma być
+# niealfabetyczna losowa
+#
+#
+
 - { name: Matematyka, typ: magisterskie }
 - { name: Informatyka, typ: inżynierskie }
 - { name: Architektura krajobrazu, typ: licencjackie }
