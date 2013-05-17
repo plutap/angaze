@@ -29,8 +29,8 @@ class Kontynent
     private $nazwa;
 
     /**
-     * @ORM\OneToMany(targetEntity="Panstwo", mappedBy="kontynent")
-     */
+ * @ORM\OneToMany(targetEntity="Panstwo", mappedBy="kontynent")
+ */
     protected $panstwa;
 
     /**
