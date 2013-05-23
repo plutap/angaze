@@ -1,0 +1,11 @@
+vagrant up
+vagrant destroy
+vagrant reload
+
+
+
+
+SSH Commands:
+ssh -p2222 -i C:/Users/gajdaw/.vagrant.d/insecure_private_key vagrant@127.0.0.1
+ssh -p2222 -i C:/Users/gajdaw/.vagrant.d/insecure_private_key -o StrictHostKeyChecking=no vagrant@127.0.0.1
+
