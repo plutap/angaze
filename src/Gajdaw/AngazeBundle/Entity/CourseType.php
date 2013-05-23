@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table()
  * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Gajdaw\AngazeBundle\Entity\CourseTypeRepository")
  */
 class CourseType
 {
