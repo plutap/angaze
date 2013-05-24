@@ -27,9 +27,11 @@ class PositionControllerTest extends WebTestCase
             $rekordy[] = $domElement->nodeValue;
         }
         $expected = array(
-            'Profesor',
-            'Asystent',
-            'Adiunkt'
+            'adiunkt',
+            'asystent',
+            'profesor'
+
+
         );
         $this->assertEquals($expected, $rekordy, 'Rekordy: course');
 
