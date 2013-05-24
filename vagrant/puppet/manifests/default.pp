@@ -41,10 +41,10 @@ class php-cs-fixer {
     path    => '/usr/bin:/bin:/usr/sbin:/sbin'
   }
 
-  exec { 'self-update-php-cs-fixer':
-    command => "/usr/local/bin/php-cs-fixer self-update",
-    path    => '/usr/bin:/bin:/usr/sbin:/sbin'
-  }
+#  exec { 'self-update-php-cs-fixer':
+#    command => "/usr/local/bin/php-cs-fixer self-update",
+#    path    => '/usr/bin:/bin:/usr/sbin:/sbin'
+#  }
 
 }
 
