@@ -31,10 +31,10 @@ class SubjectTypeControllerTest extends WebTestCase
         //wyniki, które znamy
         //na podstawie pliku yaml
         $expected = array(
-            'wykład',
             'ćwiczenia',
             'konwersatorium',
-            'monograf'
+            'monograf',
+            'wykład'
         );
         $this->assertEquals($expected, $rekordy, 'Rekordy: subjectType');
 }
