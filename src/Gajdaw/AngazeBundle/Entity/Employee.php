@@ -10,6 +10,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *
  * @ORM\Table()
  * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Gajdaw\AngazeBundle\Entity\EmployeeRepository")
  */
 class Employee
 {
@@ -164,14 +165,14 @@ class Employee
     public function setRoom(\Gajdaw\AngazeBundle\Entity\Room $room = null)
     {
         $this->room = $room;
-    
+
         return $this;
     }
 
     /**
      * Get room
      *
-     * @return \Gajdaw\AngazeBundle\Entity\Room 
+     * @return \Gajdaw\AngazeBundle\Entity\Room
      */
     public function getRoom()
     {
