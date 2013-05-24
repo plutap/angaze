@@ -27,6 +27,25 @@ class { 'composer':
 }
 
 
+class { 'mysql': }
+
+class { 'mysql::server':
+    config_hash => { 'root_password' => 'lorem' },
+}
+
+class { 'mysql::php': }
+
+
+# Tworzenie bazy danych
+mysql::db { 'angaze':
+    user     => 'editor',
+    password => 'secretPASSWORD',
+    host     => 'localhost',
+    grant    => ['all'],
+}
+
+
+
 
 
 class php-cs-fixer {
@@ -41,10 +60,10 @@ class php-cs-fixer {
     path    => '/usr/bin:/bin:/usr/sbin:/sbin'
   }
 
-  exec { 'self-update-php-cs-fixer':
-    command => "/usr/local/bin/php-cs-fixer self-update",
-    path    => '/usr/bin:/bin:/usr/sbin:/sbin'
-  }
+#  exec { 'self-update-php-cs-fixer':
+#    command => "/usr/local/bin/php-cs-fixer self-update",
+#    path    => '/usr/bin:/bin:/usr/sbin:/sbin'
+#  }
 
 }
 
