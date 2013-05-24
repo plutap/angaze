@@ -31,10 +31,10 @@ class FacultyControllerTest extends WebTestCase
         $this->assertEquals($expected, $rekordy, 'Rekordy: faculty');
 
         //Fill in the form and submit it
-        $form = $crawler->selectButton('Create a new entry')->form(array('gajdaw_angazebundle_facultytype[name]'  => 'Test',
-            // ... other fields to fill
-        ));
-        $client->submit($form);
+//        $form = $crawler->selectButton('Create a new entry')->form(array('gajdaw_angazebundle_facultytype[name]'  => 'Test',
+//            // ... other fields to fill
+//        ));
+//        $client->submit($form);
 
     }
     /*

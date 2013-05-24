@@ -6,6 +6,12 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class EmployeeSubjectControllerTest extends WebTestCase
 {
+
+    public function testIncomplete()
+    {
+        $this->markTestIncomplete('EmployeeSubject: incomplete');
+    }
+
     /*
     public function testCompleteScenario()
     {
