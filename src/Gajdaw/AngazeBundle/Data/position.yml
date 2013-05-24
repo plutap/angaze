@@ -1,3 +1,3 @@
-- { name: Profesor}
-- { name: Asystent}
-- { name: Adiunkt}
+- { name: profesor}
+- { name: asystent}
+- { name: adiunkt}
