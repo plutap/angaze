@@ -11,9 +11,27 @@ class EmployeeControllerTest extends WebTestCase
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/employee/');
-        $this->assertEquals(1, $crawler->filter('td:contains("Janek")')->count(), 'Missing element td:contains("Janek")');
-        $this->assertEquals(1, $crawler->filter('td:contains("Anna")')->count(), 'Missing element td:contains("Anna")');
-        $this->assertEquals(1, $crawler->filter('td:contains("Marek")')->count(), 'Missing element td:contains("Marek")');
+       // $this->assertEquals(1, $crawler->filter('td:contains("Janek")')->count(), 'Missing element td:contains("Janek")');
+       // $this->assertEquals(1, $crawler->filter('td:contains("Anna")')->count(), 'Missing element td:contains("Anna")');
+       // $this->assertEquals(1, $crawler->filter('td:contains("Marek")')->count(), 'Missing element td:contains("Marek")');
+
+        //rekordy sparsowane ze strony WWW
+        //do tablicy $rekordy
+        $rekordy = array();
+        $crawler = $crawler->filter('table.records_list > tbody > tr > td:nth-child(2)');
+        foreach ($crawler as $domElement) {
+            $rekordy[] = $domElement->nodeValue;
+        }
+
+        //wyniki, które znamy
+        //na podstawie pliku yaml
+        $expected = array(
+            'Janek',
+            'Anna',
+            'Marek',
+        );
+        $this->assertEquals($expected, $rekordy, 'Rekordy: employee');
+
     }
 
     /*
