@@ -27,6 +27,25 @@ class { 'composer':
 }
 
 
+class { 'mysql': }
+
+class { 'mysql::server':
+    config_hash => { 'root_password' => 'lorem' },
+}
+
+class { 'mysql::php': }
+
+
+# Tworzenie bazy danych
+mysql::db { 'angaze':
+    user     => 'editor',
+    password => 'secretPASSWORD',
+    host     => 'localhost',
+    grant    => ['all'],
+}
+
+
+
 
 
 class php-cs-fixer {
