@@ -97,7 +97,7 @@ class Course
     }
 
     /**
-     * Set courseType
+     * Set  courseType
      *
      * @param \Gajdaw\AngazeBundle\Entity\CourseType $courseType
      * @return Course
