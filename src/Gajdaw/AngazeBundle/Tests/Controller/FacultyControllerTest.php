@@ -8,7 +8,7 @@ class FacultyControllerTest extends WebTestCase
 {
     public function testUrlIndex()
     {
-        $client = static::createClient();
+        $client = static::createClient(); //a tutaj komentarz pierwszy
         $crawler = $client->request('GET', '/faculty/');
         $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /faculty/");
         $this->assertEquals(1, $crawler->filter('td:contains("NaukHumanistycznych")')->count(), 'Missing element td:contains("NaukHumanistycznych")');

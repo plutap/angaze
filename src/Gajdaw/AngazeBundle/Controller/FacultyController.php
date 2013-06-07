@@ -27,9 +27,7 @@ class FacultyController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-
         $entities = $em->getRepository('GajdawAngazeBundle:Faculty')->findAll();
-
         return array(
             'entities' => $entities,
         );
