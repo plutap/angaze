@@ -110,7 +110,7 @@ class Course
     }
 
     /**
-     * Get courseType
+     * Get  courseType
      *
      * @return \Gajdaw\AngazeBundle\Entity\CourseType
      */
