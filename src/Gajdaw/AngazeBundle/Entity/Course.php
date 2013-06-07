@@ -77,7 +77,7 @@ class Course
     }
 
     /**
-     * Set slug
+     * Set  slug
      *
      * @param string $slug
      */
