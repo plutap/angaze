@@ -87,7 +87,7 @@ class Course
     }
 
     /**
-     * Get slug
+     * Get  slug
      *
      * @return string
      */
