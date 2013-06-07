@@ -77,7 +77,7 @@ class Course
     }
 
     /**
-     * Set slug
+     * Set  slug
      *
      * @param string $slug
      */
@@ -87,7 +87,7 @@ class Course
     }
 
     /**
-     * Get slug
+     * Get  slug
      *
      * @return string
      */
@@ -97,7 +97,7 @@ class Course
     }
 
     /**
-     * Set courseType
+     * Set  courseType
      *
      * @param \Gajdaw\AngazeBundle\Entity\CourseType $courseType
      * @return Course
@@ -110,7 +110,7 @@ class Course
     }
 
     /**
-     * Get courseType
+     * Get  courseType
      *
      * @return \Gajdaw\AngazeBundle\Entity\CourseType
      */
