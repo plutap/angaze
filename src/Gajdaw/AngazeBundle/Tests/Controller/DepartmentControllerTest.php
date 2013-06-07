@@ -21,8 +21,6 @@ class DepartmentControllerTest extends WebTestCase
         //$this->assertEquals(1, $crawler->filter('td:contains("Matematyka")')->count(), 'Missing element td:contains("Matematyka")');
         //$this->assertEquals(1, $crawler->filter('td:contains("Instytut Historii")')->count(), 'Missing element td:contains("Instytut Historii")');
 
-        //test
-        //test2
         //rekordy sparsowane ze strony WWW
         //do tablicy $rekordy
         $rekordy = array();
