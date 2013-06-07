@@ -21,7 +21,7 @@ class FacultyControllerTest extends WebTestCase
             $rekordy[] = $domElement->nodeValue;
         }
         //wyniki, które znamy
-        //na podstawie pliku yaml
+        //na podstawie pliku yaml prawda?
         $expected = array(
             'Dziennikarstwa',
             'Matematyczno-Przyrodniczy',
@@ -34,7 +34,6 @@ class FacultyControllerTest extends WebTestCase
 //            // ... other fields to fill
 //        ));
 //        $client->submit($form);
-
     }
     /*
     public function testCompleteScenario()

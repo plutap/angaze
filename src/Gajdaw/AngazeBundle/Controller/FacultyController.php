@@ -50,7 +50,6 @@ class FacultyController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
-
             return $this->redirect($this->generateUrl('faculty_show', array('id' => $entity->getId())));
         }
 
