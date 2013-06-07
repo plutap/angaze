@@ -29,3 +29,4 @@ class SubjectTypeType extends AbstractType
 }
 //komit1
 //komit2
+//komit3
