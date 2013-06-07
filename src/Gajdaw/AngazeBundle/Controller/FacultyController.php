@@ -27,9 +27,7 @@ class FacultyController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-
         $entities = $em->getRepository('GajdawAngazeBundle:Faculty')->findAll();
-
         return array(
             'entities' => $entities,
         );
@@ -52,7 +50,6 @@ class FacultyController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
-
             return $this->redirect($this->generateUrl('faculty_show', array('id' => $entity->getId())));
         }
 
