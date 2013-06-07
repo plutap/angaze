@@ -27,3 +27,6 @@ class SubjectTypeType extends AbstractType
         return 'gajdaw_angazebundle_subjecttypetype';
     }
 }
+//komit1
+//komit2
+//komit3
